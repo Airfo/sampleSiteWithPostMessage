@@ -21,7 +21,8 @@ function receiveMessage(event)
 {
   
   // event.source is popup
-  showElem.innerText = event.data
+  showElem.innerText = event.data;
+  showElem.innerText += "\n\n" + typeof event.data;
 }
 window.addEventListener("message", receiveMessage, false);
     </script>
