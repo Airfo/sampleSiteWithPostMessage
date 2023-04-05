@@ -17,5 +17,12 @@
 });
 showElem = window.document.getElementById('data')
 showElem.innerText = params.data
+function receiveMessage(event)
+{
+  
+  // event.source is popup
+  showElem.innerText = event.data
+}
+window.addEventListener("message", receiveMessage, false);
     </script>
 </body>
