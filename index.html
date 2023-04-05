@@ -12,17 +12,15 @@
     </p>
     <div id="data"></div>
     <script>
-        const params = new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
-});
+       
 showElem = window.document.getElementById('data')
-showElem.innerText = params.data
+
 function receiveMessage(event)
 {
   
   // event.source is popup
-  showElem.innerText = event.data;
-  showElem.innerText += "\n\n" + typeof event.data;
+  showElem.innerText = JSON.stringify(event.data);
+  showElem.innerText += "\n\n" + typeof event.data
 }
 window.addEventListener("message", receiveMessage, false);
     </script>
