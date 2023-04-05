@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1>Test</h1>
+    <p>
+        <form action="" method="get">
+            <textarea name="data" rows="30" cols="40"></textarea>
+            <input type="submit">
+        </form>
+    </p>
+    <div id="data"></div>
+    <script>
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+showElem = window.document.getElementById('data')
+showElem.innerText = params.data
+    </script>
+</body>
